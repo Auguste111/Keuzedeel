@@ -1,0 +1,284 @@
+/* Algemene instellingen */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header */
+header {
+    position: fixed;
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.8);
+    color: white;
+    z-index: 1000;
+   
+}
+
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+   
+}
+.logo img {
+    width: 100px;
+    height: 50px
+
+}
+
+.logo img:hover {
+    cursor: pointer;
+    content: url('images/Afbeelding2.png');
+    
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* Banner */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Hoogte aanpassen naar wens */
+    overflow: hidden; /* Zorgt ervoor dat de tekst binnen de banner blijft */
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); /* Creëert een schuine rand aan de onderkant van de banner */
+}
+
+.banner-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Zet de achtergrondafbeelding achter de content */
+}
+
+.banner-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Behoudt de aspectverhouding van de afbeelding */
+}
+
+.banner-content {
+    position: relative;
+    z-index: 1; /* Zorgt ervoor dat de content bovenop de achtergrond staat */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    
+}
+
+.banner-content h1 {
+    font-size: 2.5em;
+    text-align: left;
+   text-underline-position: below;
+}
+
+.banner-content p {
+    font-size: 1.2em;
+    max-width: 600px;
+    
+    text-align: left;
+}
+
+
+/* Main content */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px; /* Om ruimte te maken voor de vaste header */
+}
+
+.profile {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar {
+    width: 25%;
+    background-color: #f9f9f9;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.photo img {
+    width: 100%;
+    border-radius: 10%;
+}
+
+.info {
+    flex: 1; /* Neemt de resterende ruimte in beslag */
+    padding: 20px;
+}
+
+.info h2, .info h3, .info p {
+    margin: 10px 0;
+}
+
+.info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info ul li {
+    margin: 5px 0;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+}
+
+footer button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+}
+
+/* Media queries voor responsiviteit */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 1.2em; /* Voorbeeldgrootte, pas aan zoals gewenst */
+    }
+
+    nav ul li {
+        margin-left: 10px; /* Minder marge voor compactheid */
+    }
+
+    @media (max-width: 768px) {
+        .banner {
+            height: 200px; /* Hoogte aanpassen voor kleinere schermen */
+        }
+    
+        .banner-content h1 {
+            font-size: 2em;
+        }
+    
+        .banner-content p {
+            font-size: 1em;
+        }
+    }
+
+    .profile {
+        flex-direction: column; /* Stapel de sidebar en de content op kleinere schermen */
+    }
+
+    .sidebar {
+        width: 100%; /* Neemt volledige breedte in op kleinere schermen */
+        margin-bottom: 20px; /* Ruimte onder de sidebar */
+    }
+
+    .info {
+        padding: 10px; /* Minder padding voor compactheid */
+    }
+}
+
+
+/* Footer */
+
+
+.footer {
+    background: url('images/adres-footer.jpg') no-repeat center center;
+    background-size: cover;
+    height: 150px; /* Hoogte aanpassen naar wens */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative; /* Zorgt ervoor dat de footer de hele breedte van de pagina bedekt */
+    width: 100%; /* Zorgt ervoor dat de footer de hele breedte van de pagina bedekt */
+    margin-top: 50px; /* Ruimte bovenaan toevoegen */
+    padding-top: 20px; /* Ruimte bovenaan toevoegen */
+}
+
+.footer-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-width: 1200px;
+    margin: 0 auto; /* Center content */
+    padding: 20px;
+}
+
+.footer button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 20%;
+    background-color: #FD724B;
+    
+}
+
+.footer button:hover {
+    background-color: #00bfc0;
+    
+}
+
+
+.footer-item p {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .footer {
+        height: 100px; /* Adjust height for smaller screens */
+    }
+}
+
+.content {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.8; /* Aangepaste line-height voor meer witruimte tussen de zinnen */
+}
+
+.content h2 {
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.content p {
+    color: #666;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+
